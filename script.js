@@ -1,32 +1,73 @@
-const html = document.querySelector('html')
-const focoBt = document.querySelector('.app__card-button--foco')
-const curtoBt = document.querySelector('.app__card-button--curto')
-const longoBt = document.querySelector('.app__card-button--longo')
-
-//criamos constantes que sao relativas a cada botao la em html, dps atribuimos eventos em cada um, em que, no momento do click, o elemento data-contexto no HTML terá seu valor modificado para foco, descanso-curto, e descanso-longo. os quais, possuem caracteristicas diferentes que foram definidas no CSS
-
-
-
-
-focoBt.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'foco')
-})
-
-curtoBt.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-curto')
-    //foco, descanso curto, e descanso longo seria o data-contexto em css, e cada um possui propriedades diferentes (cores)
-})
-
-longoBt.addEventListener('click', () => {
-    html.setAttribute('data-contexto', 'descanso-longo')
-})
-
-
 document.querySelector('html')
 document.querySelector('#timer')
 document.querySelector('.app__card-primary-button')
 document.querySelector('.app__image')
 document.querySelector('.app__title')
+//primeiro passo. buscando os elementos la no html pelo queryselector.
 
 
-const startpBt = document.querySelector('.app__card-primary-button')
+const html = document.querySelector('html')
+const focoBt = document.querySelector('.app__card-button--foco')
+const curtoBt = document.querySelector('.app__card-button--curto')
+const longoBt = document.querySelector('.app__card-button--longo')
+const banner = document.querySelector('.app__image')
+const displayTempo = document.querySelector('#timer')
+const botaoIniciar = document.querySelector('.app__card-primary-button')
+const titulo = document.querySelector('.app__title')
+const tempFoco = 1500;
+const tempDescanso = 300;
+const tempDescansoLongo = 900;
+//segundo/terceiro passo. criamos variaveis para guardar cada tipo de elemento selecionado. as constantes serão utilizadas para a definição dos botões!
+
+
+focoBt.addEventListener('click', () => {
+    alterarContexto('foco')
+})
+
+curtoBt.addEventListener('click', () => {
+    alterarContexto('descanso-curto')
+    
+})
+
+longoBt.addEventListener('click', () => {
+    alterarContexto('descanso-longo')
+})
+
+function alterarContexto(contexto) {
+    html.setAttribute('data-contexto', contexto)
+    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    
+    switch (contexto) {
+        case "foco":
+            titulo.innerHTML = 
+            `Otimize sua produtividade,<br>
+            <strong class="app__title-strong">mergulhe no que importa.</strong>`
+            //inserimos o texto, juntamente com a sua classe
+        
+        break;
+        
+        case "descanso-curto":
+            titulo.innerHTML = 
+            `Que tal dar uma respirada? <strong class="app__title-strong">Faça uma pausa curta!</strong>`
+        break;
+
+        case "descanso-longo":
+            titulo.innerHTML =
+            ` Hora de voltar à superfície.<strong class="app__title-strong"> Faça uma pausa longa.</strong>`
+
+        default:
+            break;
+    
+    }
+//switch = permite a execução de diferentes blocos de código com base no valor de uma expressão. neste caso, "contexto".
+}
+
+
+
+
+
+
+
+
+
+
