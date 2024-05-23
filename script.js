@@ -56,21 +56,23 @@ curtoBt.addEventListener('click', () => {
     tempoDecorridoEmSegundos = 300
     alterarContexto('descanso-curto')
     curtoBt.classList.add('active')
-    
 })
 
 longoBt.addEventListener('click', () => {
     tempoDecorridoEmSegundos = 900 //15 min x 60 = 900 segundos
     alterarContexto('descanso-longo')
     longoBt.classList.add('active')
+    
 })
 
 function alterarContexto(contexto) {
     mostrarTempo()
     botoes.forEach(function (contexto){
     //forEach eh um metodo de array que itera sobre cada elemento na COLEÇÃO BOTÕES. Ou seja, para cada elemento "botoes", a função de callback eh executada.
-        contexto.classList.remove('active')
+        contexto.classList.remove('active');
     })
+    html.setAttribute('data-contexto', contexto)
+    banner.setAttribute('src', `/imagens/${contexto}.png`)
     switch (contexto) {
         case "foco":
             titulo.innerHTML = 
