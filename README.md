@@ -2,7 +2,7 @@
 
 ###
 
-<p align="center">Exercício realizado e usado como base para o aprendizado sobre "manipulação de elementos no DOM" com JavaScript, na plataforma Alura</p>
+<p align="center">-Exercício realizado e usado como base para o aprendizado sobre "manipulação de elementos no DOM" com JavaScript, na plataforma Alura;</p>
 
 ###
 
@@ -12,7 +12,7 @@
 
 ###
 
-<p align="center">Cada modo, sendo eles "Foco", "Descanso curto" e "Descanso longo" alteram não apenas os valores, mas toda a dinâmica da página (cores, imagens)</p>
+<p align="center">-Cada modo, sendo eles "Foco", "Descanso curto" e "Descanso longo" alteram não apenas os valores, mas toda a dinâmica da página (cores, imagens);</p>
 
 ###
 
